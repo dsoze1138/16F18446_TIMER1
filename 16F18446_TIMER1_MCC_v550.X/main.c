@@ -45,13 +45,15 @@
 #include "mcc_generated_files/mcc.h"
 #include <stdio.h>
 
-volatile uint16_t pulse_value;
+volatile uint16_t CycleWidth;
 
 void MY_TMR1_GATE_ISR(void)
 {    
-    if(!pulse_value) pulse_value = TMR1_ReadTimer();
+    if(!CycleWidth) CycleWidth = TMR1_ReadTimer();
     
-    TMR1_WriteTimer(0);                                                 
+    TMR1_WriteTimer(0);
+    
+    T1GCON |= _T1GCON_T1GGO_MASK; 
 }
 /*
                          Main application
@@ -62,7 +64,7 @@ void main(void)
     SYSTEM_Initialize();
 
     TMR1_SetGateInterruptHandler(MY_TMR1_GATE_ISR);
-    pulse_value = 0;
+    CycleWidth = 0;
     TMR1_StartSinglePulseAcquisition();
 
     // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
@@ -80,14 +82,18 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
 
+#define TIMER1_PRESACLE (8ul)
+#define TIMER1_FREQUENCY (_XTAL_FREQ/(4ul*TIMER1_PRESACLE))
+    
     printf("\r\nPIC16F18446 TIMER1 example\r\n");
     while (1)
     {
         // Add your application code
-        if(pulse_value)
+        if(CycleWidth)
         {
-            printf("Pulse width %u TIMER1 clocks\r\n",pulse_value);
-            pulse_value = 0;
+            printf("Cycle width %u TIMER1 clocks, ",CycleWidth);
+            printf("Input frequency %lu Hz\r\n",(TIMER1_FREQUENCY/CycleWidth));
+            CycleWidth = 0;
             TMR1_StartSinglePulseAcquisition();
         }
     }

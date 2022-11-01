@@ -66,8 +66,8 @@ void TMR1_Initialize(void)
 {
     //Set the Timer to the options selected in the GUI
 
-    //T1GE enabled; T1GTM disabled; T1GPOL high; T1GGO done; T1GSPM enabled; 
-    T1GCON = 0xD0;
+    //T1GE enabled; T1GTM enabled; T1GPOL high; T1GGO done; T1GSPM enabled; 
+    T1GCON = 0xF0;
 
     //GSS T1G_pin; 
     T1GATE = 0x00;

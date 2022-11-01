@@ -24,26 +24,21 @@ cyc
 --
 &
 ## CLOCK
+
+T1G
+Always
+Never
+Low
+400
+400
+10KHz clock
+--
 &
 ## STIMULUSFILE
 &
 ## RESPONSEFILE
 &
 ## ASYNCH
-Pin
-T1G
-Pulse High
-200 cyc
-
--1
---
-Pin
-T1G
-Pulse High
-800 cyc
-
--1
---
 Pin
 T1G
 Set High
