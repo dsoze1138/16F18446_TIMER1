@@ -416,7 +416,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="INTERNAL OSCILLATOR" name="CustomFOSC"/>
-         <value>HFINTOSC (1MHz)</value>
+         <value>HFINTOSC with OSCFRQ= 32 MHz and CDIV = 1:1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="INTERNAL OSCILLATOR" name="CustomIRFC"/>
@@ -1367,15 +1367,15 @@
          <value>disabled</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="RX1DTPPS%aux2"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="RX1DTPPS%aux0"/>
          <value>13</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T1CKIPPS%aux0"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T1CKIPPS%aux1"/>
          <value>%DESELECT%</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T1GPPS%aux1"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="T1GPPS%aux2"/>
          <value>12</value>
       </entry>
       <entry>
@@ -4828,11 +4828,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="System Module" registerAlias="CONFIG1"/>
-         <value>10596</value>
+         <value>10500</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="System Module" registerAlias="CONFIG2"/>
-         <value>7911</value>
+         <value>5671</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="System Module" registerAlias="CONFIG3"/>
@@ -4864,11 +4864,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="System Module" registerAlias="CONFIG1" settingAlias="RSTOSC"/>
-         <value>HFINT1</value>
+         <value>HFINT32</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="System Module" registerAlias="CONFIG2" settingAlias="BOREN"/>
-         <value>ON</value>
+         <value>OFF</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="System Module" registerAlias="CONFIG2" settingAlias="BORV"/>
@@ -4884,7 +4884,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="System Module" registerAlias="CONFIG2" settingAlias="PPS1WAY"/>
-         <value>ON</value>
+         <value>OFF</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="System Module" registerAlias="CONFIG2" settingAlias="PWRTS"/>
@@ -5395,46 +5395,34 @@
          <value>WDT window violation reset has not occurred</value>
       </entry>
    </tokenMap>
-   <generatedFileHashHistoryMap class="java.util.TreeMap">
+   <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
-         <file>main.c</file>
-         <hash>11da124e4ef7b94744b0a25e341af661430bf699ce73ca3c1a3f4890e1d07776</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\device_config.c</file>
-         <hash>705815084fb9cb3e86cef81cf09b3c98642de79d53a8a9153718e2ca8e62327c</hash>
+         <file>mcc_generated_files\mcc.h</file>
+         <hash>074cfff028b7ea8cbbdc8102b54c88b59ae03ddcad6ec71423671b095dd57e80</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\device_config.h</file>
          <hash>badd1416adaec67ae8e3f9a6ae16b041410260f7ace59086393780c0557b374b</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\eusart1.c</file>
-         <hash>bf8be6dbe0b51426e7b0b65ecfd67c8c1446e2e29ee35f8fa3a6ca12ce33aa84</hash>
+         <file>mcc_generated_files\interrupt_manager.h</file>
+         <hash>02d18364d9e8d3c77c1a10f71d9085e72816230a4eee07e0ced80cb1f6c4caf9</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\eusart1.h</file>
          <hash>5e71a9be07d5907a2114e5c11c6e9a8390f1a33e914666c0845f7b80a7f38495</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\interrupt_manager.c</file>
-         <hash>0eaeb11c030b3268a93d2e4cfdee03473d31ab8764551719b7d11dfc05270a82</hash>
+         <file>mcc_generated_files\tmr1.h</file>
+         <hash>89c3b555ee85e5ef733aac0eb614bcb73b092cbf856c9c4bb3118556c107b63d</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\interrupt_manager.h</file>
-         <hash>02d18364d9e8d3c77c1a10f71d9085e72816230a4eee07e0ced80cb1f6c4caf9</hash>
+         <file>main.c</file>
+         <hash>11da124e4ef7b94744b0a25e341af661430bf699ce73ca3c1a3f4890e1d07776</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\mcc.c</file>
-         <hash>8b210bb691ea0e2e13ab529b08c46fd595621428ca409901d3708c15405d8a11</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\mcc.h</file>
-         <hash>074cfff028b7ea8cbbdc8102b54c88b59ae03ddcad6ec71423671b095dd57e80</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\pin_manager.c</file>
-         <hash>97cfa540dc003a01001c5f6a1d3862549bda647f05fc519159f098eae1b72d13</hash>
+         <file>mcc_generated_files\device_config.c</file>
+         <hash>5eb7ba45197971b4c95aeeb62c2f751f32d30e8431c84b85ca7bcb4bdb6b7326</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.h</file>
@@ -5445,8 +5433,20 @@
          <hash>e63fac7f66e8eae5ef613736740daa4527826152de1c6fe055071cbcc5eb548c</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\tmr1.h</file>
-         <hash>89c3b555ee85e5ef733aac0eb614bcb73b092cbf856c9c4bb3118556c107b63d</hash>
+         <file>mcc_generated_files\pin_manager.c</file>
+         <hash>97cfa540dc003a01001c5f6a1d3862549bda647f05fc519159f098eae1b72d13</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\mcc.c</file>
+         <hash>8b210bb691ea0e2e13ab529b08c46fd595621428ca409901d3708c15405d8a11</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\interrupt_manager.c</file>
+         <hash>0eaeb11c030b3268a93d2e4cfdee03473d31ab8764551719b7d11dfc05270a82</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\eusart1.c</file>
+         <hash>bf8be6dbe0b51426e7b0b65ecfd67c8c1446e2e29ee35f8fa3a6ca12ce33aa84</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>
